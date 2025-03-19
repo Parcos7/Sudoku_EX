@@ -8,15 +8,21 @@ def imagem():
         for j in i:
             print(f"{[j]}", end="")
 
-def preencher():
+def testeImg():
     for linha in range(len(sudoku)):
         for coluna in range(len(sudoku[linha])):
             valor = sudoku[linha][coluna]
             if valor == 0:
-                escolha = int(input(f"\nEscolha o numero de 1 a 9 na posição{[linha+1]}{[coluna+1]}: "))
-                sudoku[linha][coluna] = escolha
-                imagem()
-                     
+                return True
+    return False
+
+def preencher(escolha, escolha2):
+    valor = sudoku[escolha][escolha2]
+    if valor == 0:
+        x = int(input(f"\nEscolha o numero de 1 a 9: "))
+        sudoku[escolha][escolha2] = x
+        imagem()
+
 def testeValidar(sudoku):
     def validar(lista):
         return set(lista) == set(range(1,10))
@@ -42,6 +48,14 @@ def testeValidar(sudoku):
     return True
 
 imagem()
-preencher()
-print("\n", testeValidar(sudoku))
 
+while testeImg() == True:
+    escolha, escolha2 = map(int, input("\n\nEscolha a Linha e Coluna: ").split())
+    preencher(escolha, escolha2)
+    testeImg()
+
+#OBS sei que vai a maior parte das vezes invalido, estou no processo de corrigir
+if testeValidar(sudoku) == True:
+    print("Sudoku VALIDO!")
+else:
+    print("Sudoku INVALIDO!")
