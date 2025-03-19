@@ -13,7 +13,7 @@ def preencher():
         for coluna in range(len(sudoku[linha])):
             valor = sudoku[linha][coluna]
             if valor == 0:
-                escolha = int(input(f"\nEscolha o numero de 1 a 9 na posição{[linha+1]}{[coluna+1]} :"))
+                escolha = int(input(f"\nEscolha o numero de 1 a 9 na posição{[linha+1]}{[coluna+1]}: "))
                 sudoku[linha][coluna] = escolha
                 imagem()
                 
