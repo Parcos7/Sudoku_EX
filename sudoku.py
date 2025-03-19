@@ -1,6 +1,6 @@
 import random
 
-sudoku = [[random.randint(1, 9) if random.random() > 0.5 else 0 for _ in range(9)] for _ in range(9)]
+sudoku = [[random.randint(1, 9) if random.random() > 0.4 else 0 for _ in range(9)] for _ in range(9)]
 
 def imagem():
     for i in sudoku:
