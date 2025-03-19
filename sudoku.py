@@ -44,5 +44,5 @@ def testeValidar(sudoku):
 
 preencher()
 
-print("\n",imagem(), "\n", testeValidar(sudoku))
+print("\n", testeValidar(sudoku))
 
