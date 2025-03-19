@@ -16,8 +16,7 @@ def preencher():
                 escolha = int(input(f"\nEscolha o numero de 1 a 9 na posição{[linha+1]}{[coluna+1]}: "))
                 sudoku[linha][coluna] = escolha
                 imagem()
-                
-             
+                     
 def testeValidar(sudoku):
     def validar(lista):
         return set(lista) == set(range(1,10))
