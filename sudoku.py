@@ -10,11 +10,13 @@ def imagem():
 
 def preencher():
     for linha in range(len(sudoku)):
-        for coluna in range(len(sudoku)):
+        for coluna in range(len(sudoku[linha])):
             valor = sudoku[linha][coluna]
             if valor == 0:
                 escolha = int(input(f"\nEscolha o numero de 1 a 9 na posição{[linha+1]}{[coluna+1]} :"))
-                valor = escolha
+                sudoku[linha][coluna] = escolha
+                imagem()
+                
              
 def testeValidar(sudoku):
     def validar(lista):
@@ -40,7 +42,6 @@ def testeValidar(sudoku):
                 return False
     return True
 
-imagem()
 preencher()
 
 print("\n",imagem(), "\n", testeValidar(sudoku))
